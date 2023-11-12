@@ -1,0 +1,30 @@
+BoxLayout:
+    # Main vertical layout
+    orientation: 'vertical'
+    BoxLayout:
+        # Horizontal layout for miles input and button box
+        orientation: 'horizontal'
+        TextInput:
+            # Miles input field
+            id: input_miles
+            text: '34'
+            font_size: 48
+            on_text: app.handle_calculate()
+        BoxLayout:
+            # Box for up and down buttons
+            orientation: 'vertical'
+            size_hint_x: 0.25
+            Button:
+                # Up button
+                text: 'Up'
+                on_press: app.handle_increment(1)
+            Button:
+                # Down button
+                text: 'Down'
+                on_press: app.handle_increment(-1)
+    Label:
+        # Output label
+        id: output_label
+        font_size: 48
+        text: app.output_text
+        color: (1, 1, 0, 1)
